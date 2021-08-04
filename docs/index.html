@@ -8,20 +8,24 @@
 </head>
 
 <body>
+  loading...
   <script type="text/javascript">
-    liff
-      .init({
-        liffId: "1656285967-w965gZog",
-      })
-      .then(() => {
-        const idToken = liff.getDecodedIDToken();
-        document.getElementById("display").innerHTML = JSON.stringify(idToken); // print decoded idToken object
-      })
-      .catch((err) => {
-        document.getElementById("liffAppContent").classList.add("hidden");
-        document
-          .getElementById("liffInitErrorMessage")
-          .classList.remove("hidden");
-      });
+    window.onload = () => {
+      liff
+        .init({
+          liffId: "1656285967-w965gZog",
+        })
+        .then(() => {
+          const idToken = liff.getDecodedIDToken();
+          document.getElementById("display").innerHTML =
+            JSON.stringify(idToken); // print decoded idToken object
+        })
+        .catch((err) => {
+          document.getElementById("liffAppContent").classList.add("hidden");
+          document
+            .getElementById("liffInitErrorMessage")
+            .classList.remove("hidden");
+        });
+    };
   </script>
 </body>
