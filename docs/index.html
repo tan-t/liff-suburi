@@ -18,7 +18,7 @@
         .then(() => {
           const idToken = liff.getDecodedIDToken();
           document.getElementById("display").innerHTML =
-            JSON.stringify(idToken); // print decoded idToken object
+            JSON.stringify(idToken);
         })
         .catch((err) => {
           document.getElementById("liffAppContent").classList.add("hidden");
