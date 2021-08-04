@@ -17,8 +17,10 @@
         })
         .then(() => {
           const idToken = liff.getDecodedIDToken();
-          document.getElementById("display").innerHTML =
-            JSON.stringify(idToken);
+          document.getElementById("LINE_id").setAttribute("value", idToken.sub);
+          document
+            .getElementById("LINE_name")
+            .setAttribute("value", idToken.name);
         })
         .catch((err) => {
           document.getElementById("liffAppContent").classList.add("hidden");
@@ -27,6 +29,36 @@
         });
     };
   </script>
+  <div>
+    <form
+      action="https://docs.google.com/forms/u/1/d/e/1FAIpQLSd0t8IpKzRPuF3zdocMJYR1GSHv4PJBPNscqwqkzxNzj0rTGA/formResponse"
+      target="_self"
+      method="POST"
+      id="mG61Hd"
+      jsmodel="TOfxwf Q91hve"
+      data-response="%.@.[]]"
+      data-first-entry="0"
+      data-last-entry="3"
+      data-is-first-page="true"
+    >
+      メールアドレスを教えてください。<input
+        type="input"
+        name="entry.717336783"
+      />
+      <input
+        type="hidden"
+        name="entry.888150926"
+        value="LINE ID"
+        id="LINE_id"
+      /><input
+        type="hidden"
+        name="entry.488368042"
+        value="LINE ニックネーム"
+        id="LINE_name"
+      />
+      <button type="submit">送信</button>
+    </form>
+  </div>
   <div id="liffAppContetnt"></div>
   <div id="liffInitErrorMessage"></div>
   <div id="display"></div>
