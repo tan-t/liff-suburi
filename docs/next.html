@@ -18,10 +18,7 @@
         })
         .then(() => {
           const idToken = liff.getDecodedIDToken();
-          document.getElementById("LINE_id").setAttribute("value", idToken.sub);
-          document
-            .getElementById("LINE_name")
-            .setAttribute("value", idToken.name);
+          document.getElementById("LINE_id").textContent = idToken.sub;
         })
         .catch((err) => {
           document.getElementById("liffAppContent").classList.add("hidden");
